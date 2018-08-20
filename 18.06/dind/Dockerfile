@@ -32,7 +32,7 @@ RUN set -x \
 ENV DIND_COMMIT 52379fa76dee07ca038624d639d9e14f4fb719ff
 
 RUN set -ex; \
-	apk add --no-cache --virtual .fetch-deps libressl; \
+	apk add --no-cache --virtual .fetch-deps openssl; \
 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; \
 	chmod +x /usr/local/bin/dind; \
 	apk del .fetch-deps
